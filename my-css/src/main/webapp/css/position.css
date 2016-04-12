@@ -1,0 +1,71 @@
+@CHARSET "UTF-8";
+
+body {
+	margin: 0;
+	padding: 0;
+	font: 12px/1.5 arial, Simsun, sans-serif;
+	color: #333;
+	background-color: #fff;
+}
+
+.static {
+	position: static;
+	border: 1px solid red;
+	/*positon:static 设置left/width不起作用*/
+	left: 100px;
+	top: 50px;
+}
+
+.relative1 {
+	position: relative;
+	border: 1px solid #FF0;
+}
+
+.relative2 {
+	position: relative;
+	top: 20px;
+	left: 20px;
+	background-color: #FF0;
+	width: 500px;
+}
+
+.fixed {
+	position: fixed;
+	bottom: 0;
+	right: 10;
+	width: 200px;
+	background-color: #FF0;
+}
+
+p {
+	width: 500px;
+	position: absolute;
+	top: 30px;
+	position: relative;
+	border: 1px solid red;
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	float: right;
+	margin: 0 0 1em 1em;
+}
+
+.position_margin1{
+	position: absolute;
+	left:20px;
+	top:400px;
+	width: 100px;
+	height: 200px;
+	background-color: blue;
+}
+
+.position_margin2{
+	position: absolute;
+	left:20px;
+	top:400px;
+	width: 100px;
+	height: 30px;
+	background-color: red;
+}
