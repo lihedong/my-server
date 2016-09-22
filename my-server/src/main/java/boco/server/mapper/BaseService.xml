@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="boco.server.dao.IBaseDao">
+
+	<!-- 查询服务 -->
+	<select id="queryBusi" resultType="java.util.HashMap">
+        <![CDATA[
+		select distinct ne_type,
+		                sum(visit_num) visit_num,
+		                sum(req_succ_rate) req_succ_rate
+		  from festival_busi
+		 group by ne_type
+        ]]>
+	</select>
+
+	<!-- 查询服务 -->
+	<select id="queryBts" resultType="java.util.HashMap">
+        <![CDATA[
+		select to_char(start_time, 'yyyy-mm-dd') start_time,
+		       cmnet_num,
+		       year_cmnet_num
+		  from festival_cmnet
+		 where start_time = (select max(start_time) from festival_cmnet)
+        ]]>
+	</select>
+
+</mapper>
